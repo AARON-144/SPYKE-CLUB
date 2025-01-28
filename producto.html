@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Empresa - Nuestros Productos</title>
+    <style>
+        /* Estilo global */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F5F5DC;
+            overflow-x: hidden; /* Para evitar el desbordamiento horizontal */
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #FF6347; /* Color llamativo */
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        /* Animación de fade-in para el encabezado */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Estilo de la sección "Nuestros Productos" */
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            animation: slideUp 1.5s ease-out;
+        }
+
+        /* Animación de los productos al entrar */
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Estilo para cada producto */
+        .producto {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            overflow: hidden;
+            position: relative;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards; /* Desvanecer y subir */
+        }
+
+        /* Animación de desvanecimiento y subida para los productos */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .producto:hover {
+            transform: scale(1.05) rotate(3deg); /* Efecto de zoom y rotación */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background-color: #FF6347; /* Cambio de fondo al hacer hover */
+        }
+
+        .producto img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .producto img:hover {
+            transform: scale(1.15) rotate(5deg); /* Efecto de zoom y rotación en las imágenes */
+        }
+
+        .producto h3 {
+            color: #333;
+            margin-top: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .producto p {
+            color: #666;
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .producto .precio {
+            color: #FF6347;
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
+        .producto .boton {
+            background-color: #003366;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s, transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .producto .boton:hover {
+            background-color: #FF6347;
+            transform: scale(1.1); /* Efecto de zoom en el botón */
+        }
+
+        /* Icono del carrito */
+        .carrito-icono {
+            font-size: 1.5em;
+            margin-left: 8px;
+            transition: transform 0.3s;
+        }
+
+        .carrito-icono.added {
+            color: green; /* Color verde cuando el producto es añadido */
+            transform: scale(1.2); /* Aumento de tamaño cuando se agrega */
+        }
+
+        .btn {
+            background-color: #003366;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #FF6347; /* Cambio de color al pasar el mouse */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>NUESTROS PRODUCTOS</h1>
+    </header>
+
+    <!-- Sección de productos -->
+    <section class="productos">
+        <!-- Producto 1 -->
+        <div class="producto">
+            <img src="producto1.png" alt="Producto 1">
+            <h3> CAMISA </h3>
+            <p>Camisas de buena calidad y agradables para un ambiente de poker.</p>
+            <div class="precio">$25.99</div>
+            <button class="boton" onclick="añadirAlCarrito(this)">
+                Añadir al carrito
+                <span class="carrito-icono">🛒</span>
+            </button>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="producto">
+            <img src="producto2.png" alt="Producto 2">
+            <h3> ABRIGO </h3>
+            <p>Abrigo de alta calidad, perfecto para climas fríos.</p>
+            <div class="precio">$40.99</div>
+            <button class="boton" onclick="añadirAlCarrito(this)">
+                Añadir al carrito
+                <span class="carrito-icono">🛒</span>
+            </button>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="producto">
+            <img src="producto5.png" alt="Producto 3">
+            <h3> GORRA </h3>
+            <p>Gorra moderna y cómoda para cualquier ocasión.</p>
+            <div class="precio">$15.99</div>
+            <button class="boton" onclick="añadirAlCarrito(this)">
+                Añadir al carrito
+                <span class="carrito-icono">🛒</span>
+            </button>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="producto">
+            <img src="producto7.png" alt="Producto 4">
+            <h3> LLAVERO </h3>
+            <p>LLavero único y personalizado para tu estilo.</p>
+            <div class="precio">$8.99</div>
+            <button class="boton" onclick="añadirAlCarrito(this)">
+                Añadir al carrito
+                <span class="carrito-icono">🛒</span>
+            </button>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="producto">
+            <img src="producto4.png" alt="Producto 5">
+            <h3> CAMISA DE PÓKER </h3>
+            <p>Camisa de póker de edición limitada.</p>
+            <div class="precio">$30.00</div>
+            <button class="boton" onclick="añadirAlCarrito(this)">
+                Añadir al carrito
+                <span class="carrito-icono">🛒</span>
+            </button>
+        </div>
+
+        <!-- Producto 6 -->
+        <div class="producto">
+            <img src="producto6.png" alt="Producto 6">
+            <h3> GORRA </h3>
+            <p>Gorra moderna y cómoda para cualquier ocasión..</p>
+            <div class="precio">$28.00</div>
+            <button class="boton" onclick="añadirAlCarrito(this)">
+                Añadir al carrito
+                <span class="carrito-icono">🛒</span>
+            </button>
+        </div>
+
+        <!-- Producto 7 -->
+        <div class="producto">
+            <img src="producto7.png" alt="Producto 7">
+            <h3> LLAVERO </h3>
+            <p>LLavero único y personalizado para tu estilo.</p>
+            <div class="precio">$10.00</div>
+            <button class="boton" onclick="añadirAlCarrito(this)">
+                Añadir al carrito
+                <span class="carrito-icono">🛒</span>
+            </button>
+        </div>
+
+        <!-- Producto 8 -->
+        <div class="producto">
+            <img src="producto8.png" alt="Producto 8">
+            <h3> LLAVERO </h3>
+            <p>LLavero único y personalizado para tu estilo.</p>
+            <div class="precio">$10.00</div>
+            <button class="boton" onclick="añadirAlCarrito(this)">
+                Añadir al carrito
+                <span class="carrito-icono">🛒</span>
+            </button>
+        </div>
+
+        <!-- Más productos pueden ser añadidos de manera similar -->
+    </section>
+
+    <!-- Botón de navegación -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="index.html" class="btn">Volver al Inicio</a>
+    </div>
+
+    <script>
+        // Función para agregar al carrito
+        function añadirAlCarrito(button) {
+            const icono = button.querySelector('.carrito-icono');
+            // Cambiar el color del icono y hacer un pequeño zoom
+            icono.classList.add('added');
+
+            // Después de 1 segundo, restauramos el estado normal
+            setTimeout(() => {
+                icono.classList.remove('added');
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>

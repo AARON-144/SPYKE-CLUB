@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Mi Empresa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo global */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        /* Contenedor de los botones de contacto */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        /* Botones de contacto */
+        .contact-item {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .contact-item a {
+            display: block;
+            background-color: #3498db;
+            color: white;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 250px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .contact-item a:hover {
+            background-color: #2980b9;
+            transform: scale(1.1);
+        }
+
+        /* Iconos */
+        .contact-item img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Contáctanos</h1>
+    </header>
+
+    <!-- Contenedor de los botones de contacto -->
+    <div class="contact-container">
+        <!-- WhatsApp -->
+        <div class="contact-item">
+            <a href="https://wa.me/1234567890" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                WhatsApp
+            </a>
+        </div>
+
+        <!-- Facebook -->
+        <div class="contact-item">
+            <a href="https://www.facebook.com/tuempresa" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                Facebook
+            </a>
+        </div>
+
+        <!-- Instagram -->
+        <div class="contact-item">
+            <a href="https://www.instagram.com/tuempresa" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+                Instagram
+            </a>
+        </div>
+    </div>
+
+    <!-- Botón de navegación -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="index.html" class="btn">Volver al Inicio</a>
+    </div>
+
+</body>
+</html>
